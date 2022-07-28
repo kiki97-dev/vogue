@@ -73,15 +73,60 @@ input, a, button {
   height: 100vh;
   box-sizing: border-box; }
   #main .main_left {
-    width: 75%;
+    width: 90%;
     height: 100%;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    float: left; }
     #main .main_left .mian_slide {
       width: 100%;
       height: 100%;
       box-sizing: border-box;
       position: relative;
       overflow: hidden; }
+      #main .main_left .mian_slide .swiper-button-prev {
+        top: auto;
+        left: auto;
+        bottom: 500px;
+        right: 100px; }
+        #main .main_left .mian_slide .swiper-button-prev i {
+          font-size: 40px;
+          font-weight: 700;
+          color: #111;
+          line-height: 1; }
+        #main .main_left .mian_slide .swiper-button-prev::after {
+          content: ""; }
+      #main .main_left .mian_slide .swiper-button-next {
+        top: auto;
+        left: auto;
+        bottom: 400px;
+        right: 100px; }
+        #main .main_left .mian_slide .swiper-button-next i {
+          font-size: 40px;
+          font-weight: 700;
+          color: #111;
+          line-height: 1; }
+        #main .main_left .mian_slide .swiper-button-next::after {
+          content: ""; }
+      #main .main_left .mian_slide .scrollicon {
+        position: absolute;
+        bottom: 150px;
+        right: 100px; }
+        #main .main_left .mian_slide .scrollicon i {
+          font-size: 25px;
+          font-weight: 700;
+          color: #222;
+          line-height: 1;
+          animation: scrolliconani 1s linear 1s infinite alternate; }
+        #main .main_left .mian_slide .scrollicon::After {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 200px;
+          background-color: #888;
+          position: absolute;
+          bottom: -220px;
+          left: 50%;
+          transform: translateX(-50%); }
       #main .main_left .mian_slide .swiper-wrapper {
         width: 100%;
         height: 100%; }
@@ -91,9 +136,9 @@ input, a, button {
           overflow: hidden; }
           #main .main_left .mian_slide .swiper-wrapper .swiper-slide.swiper-slide-active .main_txt p {
             opacity: 1;
-            right: -200px; }
+            right: -210px; }
           #main .main_left .mian_slide .swiper-wrapper .swiper-slide .main_txt {
-            width: 30%;
+            width: 22%;
             height: 100%;
             float: left;
             box-sizing: border-box;
@@ -118,8 +163,8 @@ input, a, button {
           #main .main_left .mian_slide .swiper-wrapper .swiper-slide .img_box {
             position: relative;
             z-index: 2;
-            float: right;
-            width: 70%;
+            float: left;
+            width: 63%;
             height: 100%; }
             #main .main_left .mian_slide .swiper-wrapper .swiper-slide .img_box.ms1 {
               background: url(../img/main1.jpg) center center;
@@ -130,8 +175,46 @@ input, a, button {
               background-repeat: no-repeat;
               background-size: cover; }
             #main .main_left .mian_slide .swiper-wrapper .swiper-slide .img_box.ms3 {
-              background: url(../img/main3.jpg) center center;
+              background: url(../img/main3.jpg) center top;
               background-repeat: no-repeat;
               background-size: cover; }
+            #main .main_left .mian_slide .swiper-wrapper .swiper-slide .img_box.ms4 {
+              background: url(../img/main4.jpg) center top;
+              background-repeat: no-repeat;
+              background-size: cover; }
+  #main .main_right {
+    width: 10%;
+    height: 100%;
+    box-sizing: border-box;
+    float: right;
+    position: relative; }
+    #main .main_right ul {
+      position: absolute;
+      bottom: 250px;
+      left: 40%;
+      transform: translateX(-50%); }
+      #main .main_right ul li {
+        margin-bottom: 30px; }
+        #main .main_right ul li a {
+          color: #111;
+          font-size: 25px;
+          line-height: 1; }
+        #main .main_right ul li.followus {
+          transform: rotate(-90deg) translate(-30px, -25px); }
+          #main .main_right ul li.followus a {
+            font: 500 16px/1 "Noto Sans KR"; }
+    #main .main_right .search {
+      position: absolute;
+      bottom: 100px;
+      left: 30%;
+      transform: translateX(-50%);
+      color: #111;
+      font-size: 20px; }
+
+@keyframes scrolliconani {
+  0% {
+    padding-bottom: 0px; }
+  100% {
+    padding-bottom: 10px; } }
 
 /*# sourceMappingURL=style.css.map */
