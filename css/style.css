@@ -26,6 +26,63 @@ input, a, button {
 @font-face {
   font-family: "vogue";
   src: url("../font/Vogue.ttf") format("truetype"); }
+#pop {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 11;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh; }
+  #pop .close {
+    position: relative;
+    width: 1500px;
+    margin: 150px auto 0px;
+    z-index: 12;
+    font-family: "Noto Sans KR"; }
+    #pop .close a {
+      color: #fff;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      font-weight: 300; }
+      #pop .close a span {
+        display: inline;
+        margin-left: 10px; }
+      #pop .close a i {
+        font-weight: 700; }
+  #pop .pop_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s; }
+  #pop .pop_txt {
+    opacity: 0;
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 12;
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    transition: all 1s;
+    font: 900 60px/1.3 "Noto Sans KR";
+    letter-spacing: -2px;
+    color: #fff; }
+    #pop .pop_txt span {
+      display: block;
+      font: 500 20px/1 "Noto Sans KR";
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+      color: #fff;
+      text-align: center; }
+  #pop.on .pop_bg {
+    transform: scale(2); }
+  #pop.on .pop_txt {
+    bottom: 50%;
+    opacity: 1; }
+
 #hedaer {
   position: fixed;
   top: 0px;
@@ -33,29 +90,38 @@ input, a, button {
   width: 100%;
   height: 160px;
   box-sizing: border-box;
-  z-index: 9; }
+  z-index: 12; }
+  #hedaer.on .inner .logo a {
+    color: #fff; }
+  #hedaer.on .inner .logo::after {
+    background-color: #fff; }
+  #hedaer.on .inner .menu_btn {
+    color: #fff; }
   #hedaer .inner {
     width: 1500px;
     margin: 0px auto;
     height: 100%;
     box-sizing: border-box;
     position: relative; }
-  #hedaer .logo {
+  #hedaer .logo a {
     line-height: 160px;
     font-family: "vogue";
     font-weight: normal;
     font-size: 55px;
-    position: relative; }
-    #hedaer .logo::after {
-      content: "";
-      display: block;
-      width: 1200px;
-      height: 1px;
-      background-color: black;
-      position: absolute;
-      top: 50%;
-      left: 210px;
-      margin-top: -4px; }
+    position: relative;
+    color: #111;
+    transition: all 1s 0.3s; }
+  #hedaer .logo::after {
+    content: "";
+    display: block;
+    width: 1200px;
+    height: 1px;
+    background-color: #111;
+    position: absolute;
+    top: 50%;
+    left: 210px;
+    margin-top: -4px;
+    transition: all 1s 0.3s; }
   #hedaer .menu_btn {
     font-family: "Noto Sans KR", sans-serif;
     position: absolute;
@@ -66,7 +132,8 @@ input, a, button {
     font-size: 16px;
     line-height: 1;
     font-weight: 500;
-    letter-spacing: -0.5px; }
+    letter-spacing: -0.5px;
+    transition: all 1s 0.3s; }
 
 #main {
   width: 100%;
@@ -167,7 +234,8 @@ input, a, button {
             z-index: 2;
             float: left;
             width: 63%;
-            height: 100%; }
+            height: 100%;
+            cursor: pointer; }
             #main .main_left .mian_slide .swiper-wrapper .swiper-slide .img_box.ms1 {
               background: url(../img/main1.jpg) center center;
               background-repeat: no-repeat;
