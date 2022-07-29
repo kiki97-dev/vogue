@@ -25,10 +25,16 @@ $(document).ready(function () {
     var poptxt = pop.children(".pop_txt");
 
     var isdone = true;
+    $(window).on("resize", function (e) {
+        poptop = stand.offset().top;
+        popleft = stand.offset().left;
+        popwidth = stand.width();
+        popheight = stand.height();
+    })
 
     $(".swiper-slide").on("click", function (e) {
         e.preventDefault(); //이벤트의 기본 동작을 막아줌 (링크이동)
-        if(isdone == false) return;
+        if (isdone == false) return;
         isdone = false;
         if ($(this).hasClass("swiper-slide-active") == true) {
             header.addClass("on");
@@ -41,13 +47,13 @@ $(document).ready(function () {
                 poptxt.append(txt);
             }, 100);
             setTimeout(() => {
-                isdone= true;
+                isdone = true;
             }, 1000);
         }
     });
 
     $(".close").on("click", function (e) {
-        if(isdone == false) return;
+        if (isdone == false) return;
         isdone = false;
         e.preventDefault(); //이벤트의 기본 동작을 막아줌 (링크이동)
 
